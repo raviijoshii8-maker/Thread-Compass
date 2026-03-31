@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thread & Compass · Garments</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    background:#0f0e0c;
+    color:#e9e2d7;
+    font-family:Inter, sans-serif;
+}
+.serif{font-family:'Playfair Display', serif;}
+
+.container-custom{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+}
+.card{
+    background:#1b1815;
+    border:1px solid #2f2a24;
+    border-radius:10px;
+    transition:.3s;
+}
+.card:hover{
+    border-color:#d9a066;
+    transform:translateY(-4px);
+}
+.hero{
+    background:#060504;
+    border-bottom:4px solid #d9a066;
+}
+.section-title{
+    font-size:28px;
+    border-left:5px solid #d9a066;
+    padding-left:12px;
+    margin:40px 0 20px;
+    font-family:'Playfair Display', serif;
+}
+img{
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero py-20 text-center">
+    <h1 class="text-6xl serif text-amber-200">Thread & Compass</h1>
+    <p class="mt-4 text-stone-400">A map of timeless garments, vintage archives and artisan clothing.</p>
+</section>
+
+<div class="container-custom">
+
+<!-- Denim -->
+<div class="section-title">Raw Denim</div>
+<div class="grid md:grid-cols-2 gap-8 items-center">
+<img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format">
+<div class="card p-6">
+<h3 class="text-xl text-amber-300 serif mb-3">Selvedge Guide</h3>
+<p class="text-stone-400">
+Look for selvedge ID, hidden rivets, chain stitching and unsanforized denim for authentic heritage jeans.
+</p>
+</div>
+</div>
+
+<!-- Jackets -->
+<div class="section-title">Flight Jackets</div>
+<div class="grid md:grid-cols-2 gap-8 items-center">
+<img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=1974&auto=format">
+<div class="card p-6">
+<h3 class="text-xl text-amber-300 serif mb-3">Aviator Archive</h3>
+<p class="text-stone-400">
+Goatskin for comfort, horsehide for patina. Vintage Talon zippers indicate authentic heritage jackets.
+</p>
+</div>
+</div>
+
+<!-- Tailoring -->
+<div class="section-title">Bespoke Tailoring</div>
+<div class="grid md:grid-cols-2 gap-8 items-center">
+<img src="https://images.unsplash.com/photo-1718995343476-73098cf9dfec?q=80&w=1170&auto=format">
+<div class="card p-6">
+<h3 class="text-xl text-amber-300 serif mb-3">Made To Measure</h3>
+<p class="text-stone-400">
+Full canvas construction suits mold to the body over time and last decades.
+</p>
+</div>
+</div>
+
+<!-- Leather -->
+<div class="section-title">Leather Goods</div>
+<div class="grid md:grid-cols-2 gap-8 items-center">
+<img src="https://images.unsplash.com/photo-1631160246898-58192f971b5f?q=80&w=1025&auto=format">
+<div class="card p-6">
+<h3 class="text-xl text-amber-300 serif mb-3">Vegetable Tanned Leather</h3>
+<p class="text-stone-400">
+Full grain leather ages beautifully and develops patina over time.
+</p>
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="text-center py-12 mt-10 border-t border-stone-800">
+<h2 class="serif text-3xl text-amber-200">Thread & Compass</h2>
+<p class="text-stone-500 mt-2">Timeless garments · Vintage archives · Artisan clothing</p>
+</footer>
+
+</body>
+</html>
