@@ -1,118 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thread & Compass · Garments</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-    background:#0f0e0c;
-    color:#e9e2d7;
-    font-family:Inter, sans-serif;
-}
-.serif{font-family:'Playfair Display', serif;}
-
-.container-custom{
-    max-width:1200px;
-    margin:auto;
-    padding:0 20px;
-}
-.card{
-    background:#1b1815;
-    border:1px solid #2f2a24;
-    border-radius:10px;
-    transition:.3s;
-}
-.card:hover{
-    border-color:#d9a066;
-    transform:translateY(-4px);
-}
-.hero{
-    background:#060504;
-    border-bottom:4px solid #d9a066;
-}
-.section-title{
-    font-size:28px;
-    border-left:5px solid #d9a066;
-    padding-left:12px;
-    margin:40px 0 20px;
-    font-family:'Playfair Display', serif;
-}
-img{
-    border-radius:10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread & Compass · Artisan Heritage Wear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: #0f0e0c; color: #e9e2d7; font-family: Inter, sans-serif; scroll-behavior: smooth; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .container-custom { max-width: 1200px; margin: auto; padding: 0 20px; }
+        .card { background: #1b1815; border: 1px solid #2f2a24; border-radius: 10px; transition: .4s; overflow: hidden; height: 100%; }
+        .card:hover { border-color: #d9a066; transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format'); background-size: cover; background-position: center; border-bottom: 4px solid #d9a066; }
+        .section-title { font-size: 32px; border-left: 5px solid #d9a066; padding-left: 15px; margin: 80px 0 40px; font-family: 'Playfair Display', serif; }
+        .btn-gold { background: #d9a066; color: #0f0e0c; font-weight: 700; transition: 0.3s; cursor: pointer; }
+        .btn-gold:hover { background: #f0b884; }
+        .badge { background: rgba(217, 160, 102, 0.1); color: #d9a066; border: 1px solid #d9a066; padding: 2px 8px; font-size: 10px; border-radius: 4px; text-transform: uppercase; }
+        
+        #cookie-popup { display: flex; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero py-20 text-center">
-    <h1 class="text-6xl serif text-amber-200">Thread & Compass</h1>
-    <p class="mt-4 text-stone-400">A map of timeless garments, vintage archives and artisan clothing.</p>
+<nav class="sticky top-0 z-50 bg-[#0f0e0c]/95 backdrop-blur-md border-b border-stone-800 py-5">
+    <div class="container-custom flex justify-between items-center">
+        <div class="serif text-2xl text-amber-200 font-bold tracking-tighter">THREAD & COMPASS</div>
+        <div class="hidden lg:flex gap-10 text-xs uppercase tracking-[0.2em] text-stone-400">
+            <a href="#shop" class="hover:text-amber-300 transition">Shop</a>
+            <a href="#philosophy" class="hover:text-amber-300 transition">Philosophy</a>
+            <a href="#journal" class="hover:text-amber-300 transition">Journal</a>
+            <a href="#contact" class="hover:text-amber-300 transition">Contact</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="hover:text-amber-300"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+            <button class="relative hover:text-amber-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                <span class="absolute -top-2 -right-2 bg-amber-600 text-white text-[9px] rounded-full h-4 w-4 flex items-center justify-center font-bold">0</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<section class="hero py-40 text-center">
+    <div class="container-custom">
+        <span class="text-amber-400 uppercase tracking-[0.3em] text-sm mb-4 block">Est. 2024 · Heritage Grade</span>
+        <h1 class="text-6xl md:text-8xl serif text-amber-100 mb-6">Built for the Journey.</h1>
+        <p class="max-w-2xl mx-auto text-stone-300 text-lg leading-relaxed mb-10 italic">
+            "A garment should tell a story. Not of the season it was bought in, but of the decades it has survived."
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#shop" class="btn-gold px-10 py-4 rounded-sm uppercase tracking-widest text-sm">Shop The Collection</a>
+            <a href="#philosophy" class="border border-stone-500 px-10 py-4 rounded-sm uppercase tracking-widest text-sm hover:bg-stone-800 transition">Our Story</a>
+        </div>
+    </div>
 </section>
 
-<div class="container-custom">
+<section id="philosophy" class="py-24 bg-[#141210]">
+    <div class="container-custom grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+            <h2 class="serif text-4xl text-amber-200 mb-6">Slow Fashion, Fast Patina.</h2>
+            <p class="text-stone-400 leading-relaxed mb-6">
+                In an era of disposable fashion, Thread & Compass stands as a monument to the enduring. We source our textiles from the few remaining family-owned mills in Okayama, Biella, and Chicago. 
+            </p>
+            <p class="text-stone-400 leading-relaxed mb-8">
+                Every stitch is considered. Every button is selected for its ability to age. We don't believe in "new" looks; we believe in the beauty of a jacket that has seen five years of rain and sun.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <h4 class="serif text-amber-100 text-xl">Honest Sourcing</h4>
+                    <p class="text-sm text-stone-500 mt-2">Ethically harvested leathers and organic indigo dyes.</p>
+                </div>
+                <div>
+                    <h4 class="serif text-amber-100 text-xl">Repair for Life</h4>
+                    <p class="text-sm text-stone-500 mt-2">Free lifetime repairs on all original selvedge denim.</p>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1000&auto=format" class="rounded-lg shadow-2xl mt-10">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format" class="rounded-lg shadow-2xl">
+        </div>
+    </div>
+</section>
 
-<!-- Denim -->
-<div class="section-title">Raw Denim</div>
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=2070&auto=format">
-<div class="card p-6">
-<h3 class="text-xl text-amber-300 serif mb-3">Selvedge Guide</h3>
-<p class="text-stone-400">
-Look for selvedge ID, hidden rivets, chain stitching and unsanforized denim for authentic heritage jeans.
-</p>
-</div>
+<div id="shop" class="container-custom pb-24">
+    <div class="section-title">The Archive Collection</div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1000&auto=format" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+                <div class="absolute top-4 left-4"><span class="badge">Limited Run</span></div>
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">Navigator Raw Selvedge</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">16oz Unsanforized denim from Mills of Japan. Expect heavy fading and a custom fit after the first soak.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$285</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=1000&auto=format" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+                <div class="absolute top-4 left-4"><span class="badge">Best Seller</span></div>
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">A-2 Flight Horsehide</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">Authentic 1940s pattern. Tea-core leather that reveals brown undertones as it wears over time.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$1,150</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?q=80&w=1000&auto=format" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">Artisan Indigo Chore</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">Hand-dyed Sashiko fabric. A versatile layer for the modern craftsman, featuring reinforced elbows.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$320</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1000&auto=format" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">Merino Submariner</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">Extra-heavy gauge knit. Sourced from Australian merino and spun in the Scottish highlands.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$195</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://images.unsplash.com/photo-1631160246898-58192f971b5f?q=80&w=1000&auto=format" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">Wickett & Craig Belt</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">12oz Saddle leather. Solid sand-cast brass hardware that will never rust or fail.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$110</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="relative overflow-hidden group">
+                <img src="https://plus.unsplash.com/premium_photo-1661313817350-1fa759c43a3b?q=80&w=1217&auto=format&fit=crop" class="w-full h-[400px] object-cover transition duration-700 group-hover:scale-110">
+            </div>
+            <div class="p-8">
+                <h3 class="serif text-2xl text-amber-200 mb-2">Service Boot No. 1</h3>
+                <p class="text-stone-400 text-sm mb-6 leading-relaxed">Goodyear welted on a Dainite sole. Chromexcel leather from the famous Horween tannery.</p>
+                <div class="flex justify-between items-center pt-6 border-t border-stone-800">
+                    <span class="text-xl font-bold">$620</span>
+                    <button class="btn-gold px-6 py-2 text-xs rounded-sm">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<!-- Jackets -->
-<div class="section-title">Flight Jackets</div>
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<img src="https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=1974&auto=format">
-<div class="card p-6">
-<h3 class="text-xl text-amber-300 serif mb-3">Aviator Archive</h3>
-<p class="text-stone-400">
-Goatskin for comfort, horsehide for patina. Vintage Talon zippers indicate authentic heritage jackets.
-</p>
-</div>
-</div>
+<section id="journal" class="py-24 bg-[#060504]">
+    <div class="container-custom">
+        <h2 class="serif text-4xl text-center text-amber-200 mb-16">Field Journal</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <article class="group cursor-pointer">
+                <img src="https://plus.unsplash.com/premium_photo-1698260795268-cc7e0d5c3174?q=80&w=1170&auto=format&fit=crop" class="w-full h-72 object-cover rounded mb-6 grayscale group-hover:grayscale-0 transition duration-500">
+                <span class="text-amber-500 text-xs tracking-widest uppercase">Maintenance</span>
+                <h3 class="serif text-2xl mt-2 mb-4 group-hover:text-amber-200 transition">The First Soak: A Guide to Raw Denim</h3>
+                <p class="text-stone-500 text-sm leading-relaxed">Mastering the art of the initial bathtub soak to ensure your denim shrinks to your unique body shape...</p>
+            </article>
+            <article class="group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1537465978529-d23b17165b3b?q=80&w=1170&auto=format&fit=crop" class="w-full h-72 object-cover rounded mb-6 grayscale group-hover:grayscale-0 transition duration-500">
+                <span class="text-amber-500 text-xs tracking-widest uppercase">Travel</span>
+                <h3 class="serif text-2xl mt-2 mb-4 group-hover:text-amber-200 transition">Winter in the Highlands</h3>
+                <p class="text-stone-500 text-sm leading-relaxed">Taking our latest wool collection to the rugged terrain of northern Scotland for real-world stress testing...</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-<!-- Tailoring -->
-<div class="section-title">Bespoke Tailoring</div>
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<img src="https://images.unsplash.com/photo-1718995343476-73098cf9dfec?q=80&w=1170&auto=format">
-<div class="card p-6">
-<h3 class="text-xl text-amber-300 serif mb-3">Made To Measure</h3>
-<p class="text-stone-400">
-Full canvas construction suits mold to the body over time and last decades.
-</p>
-</div>
-</div>
-
-<!-- Leather -->
-<div class="section-title">Leather Goods</div>
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<img src="https://images.unsplash.com/photo-1631160246898-58192f971b5f?q=80&w=1025&auto=format">
-<div class="card p-6">
-<h3 class="text-xl text-amber-300 serif mb-3">Vegetable Tanned Leather</h3>
-<p class="text-stone-400">
-Full grain leather ages beautifully and develops patina over time.
-</p>
-</div>
-</div>
-
-</div>
-
-<!-- Footer -->
-<footer class="text-center py-12 mt-10 border-t border-stone-800">
-<h2 class="serif text-3xl text-amber-200">Thread & Compass</h2>
-<p class="text-stone-500 mt-2">Timeless garments · Vintage archives · Artisan clothing</p>
+<footer id="contact" class="bg-[#0f0e0c] pt-20 pb-10 border-t border-stone-900">
+    <div class="container-custom grid md:grid-cols-4 gap-12 mb-20">
+        <div class="md:col-span-1">
+            <h2 class="serif text-2xl text-amber-200 mb-6">T&C</h2>
+            <p class="text-stone-500 text-sm leading-relaxed">Supplying timeless garments to those who value the journey as much as the destination.</p>
+        </div>
+        <div>
+            <h4 class="text-white text-xs uppercase tracking-widest mb-6 font-bold">Archives</h4>
+            <ul class="text-stone-500 text-sm space-y-4">
+                <li><a href="#" class="hover:text-amber-300 transition">Raw Denim</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Outerwear</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Knitwear</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Accessories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-white text-xs uppercase tracking-widest mb-6 font-bold">Support</h4>
+            <ul class="text-stone-500 text-sm space-y-4">
+                <li><a href="#" class="hover:text-amber-300 transition">Shipping Policy</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Returns & Exchanges</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Garment Care</a></li>
+                <li><a href="#" class="hover:text-amber-300 transition">Stockists</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-white text-xs uppercase tracking-widest mb-6 font-bold">Newsletter</h4>
+            <p class="text-stone-500 text-xs mb-4">Join the list for early archive access.</p>
+            <div class="flex">
+                <input type="email" placeholder="Email Address" class="bg-stone-900 border-none text-white p-3 text-sm w-full focus:ring-1 focus:ring-amber-500">
+                <button class="bg-amber-700 px-4 text-xs font-bold uppercase tracking-widest">Join</button>
+            </div>
+        </div>
+    </div>
+    <p class="text-center text-stone-700 text-[10px] tracking-widest uppercase">© 2026 Thread & Compass. Artisan Garments for the Modern Map.</p>
 </footer>
+
+<div id="cookie-popup">
+    <div class="card max-w-lg p-10 text-center shadow-2xl mx-4">
+        <div class="flex justify-center mb-6 text-amber-500">
+            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 20c4.083 0 7.351-3.031 7.453-7.043l.004-.334c0-4.026-3.238-7.341-7.394-7.53l-.337-.006c-4.116 0-7.447 3.321-7.453 7.437l-.004.331a9.96 9.96 0 002.395 6.415M12 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+        </div>
+        <h2 class="serif text-3xl mb-4 text-amber-100">Digital Provisions</h2>
+        <p class="text-stone-400 text-sm leading-relaxed mb-8">
+            Our workshop uses cookies to improve your browsing experience and remember your size preferences. We never share your data with fast-fashion conglomerates.
+        </p>
+        <div class="flex flex-col gap-4">
+            <button onclick="closeCookies()" class="btn-gold py-4 rounded-sm uppercase tracking-widest text-sm">Accept All</button>
+            <button onclick="closeCookies()" class="text-stone-500 hover:text-stone-300 text-xs underline uppercase tracking-widest">Settings Only</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeCookies() {
+        document.getElementById('cookie-popup').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('cookie-popup').style.display = 'none';
+        }, 300);
+        localStorage.setItem('tc_cookies', 'accepted');
+    }
+
+    window.onload = function() {
+        if(localStorage.getItem('tc_cookies')) {
+            document.getElementById('cookie-popup').style.display = 'none';
+        }
+    }
+</script>
 
 </body>
 </html>
